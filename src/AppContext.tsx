@@ -1,13 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 
-const AppContext = React.createContext();
+
+interface AppContextProps {
+  onMouseHover: (e: React.MouseEvent<HTMLDivElement>) => void,
+  onClick: () => void,
+  syncSection: (sectionName: string, vma: string) => void,
+  resetSection: () => void,
+  savedCursorX: number,
+  movingCursor: number,
+  hoveredSection: { text: string, hexAxis: string },
+  children?: ReactNode
+}
+
+const AppContext = React.createContext<AppContextProps>({
+  onMouseHover: () => { },
+  onClick: () => { },
+  syncSection: () => { },
+  resetSection: () => { },
+  savedCursorX: 0,
+  movingCursor: 0,
+  hoveredSection: { text: '', hexAxis: '' },
+});;
 
 export const ARROW_SIZE = 8;
 export const BOX_SIZE = 24;
 export const BEACON_SIZE = BOX_SIZE + ARROW_SIZE;
 
 
-export const AppContextProvider = ({ children }) => {
+export const AppContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [movingCursor, setMovingCursorX] = useState(0); // on hover
   const [savedCursorX, setSavedCursorX] = useState(0) // on click
 
