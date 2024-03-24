@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Bar from './atoms/Bar';
 import Beacon from './atoms/Beacon';
 import Cursor from './atoms/Cursor';
