@@ -2,6 +2,8 @@ import React, { ReactNode } from "react";
 import sections from "../../sections.json";
 import { useAppContext } from '../../AppContext';
 
+import lodash from 'lodash'
+
 const getSectionsVMA = () => {
   return sections.sort((a, b) => a.vma - b.vma);
 };
