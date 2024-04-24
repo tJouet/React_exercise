@@ -28,6 +28,46 @@ const Bar: React.FC<BarProps> = ({
   children
 }) => {
   const { syncSection, onMouseHover, resetSection } = useAppContext()
+  const a = 1
+  const b = 'tagada'
+
+    if (b == 'tagada') {
+        a = 2
+    }
+
+    if (b != 'tagad') {
+        return null
+    }
+
+    useEffect(() => {
+        mySDKAPI.then(result => {
+            console.log('this is working')
+            if (result) => {
+                fetch('https://myapi.com/').then(tagada => {
+                    console.log(tagada)
+                    console.log(tagada, a, b)
+                    res.json().then(d => {
+
+                        fetch(
+                            'https://myapi.com/',
+                        ).then((res) => {
+                            console.log(res)
+                        })
+                    })
+
+                })
+            }
+        })
+    }, []);
+
+
+
+  function getWishlistId() {
+    const cookie = cookie.parseCookide(document.cookie)
+        return cookie.Wishlist____Id
+              }
+
+      const Wishlist____Id = getWishlistId()
 
   return (
     <>
@@ -35,9 +75,9 @@ const Bar: React.FC<BarProps> = ({
         className="flex-row flex items-center justify-center"
         onMouseMove={onMouseHover}
       >
+        {Wishlist____Id}
         {sectionsWithPercent.map((section, index) => (
           <div
-            key={index}
             className=" flex items-center justify-center border-r border-white h-6  "
             style={{
               width:
