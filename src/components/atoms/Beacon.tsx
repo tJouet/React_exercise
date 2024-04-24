@@ -10,6 +10,26 @@ interface BeaconProps {
 const Beacon: React.FC<BeaconProps> = ({ axisX, style = {} }) => {
   const centeredCursorValue = `${axisX - (BOX_SIZE / 2)}px`;
 
+  const options = [1, 2, 3, 4, 45, 5, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7 ,23 ,23 ,23 ,23 ,123 ,23 ]
+
+  let optionResult = options.filter((o) => o > 5).map((o) => o * 2).map((p) => p.toString()).reduce((a, b) => a + b, 0).toString() ? null : undefined
+
+  // check if my account is created for user
+  let is_my_account_createdFor_user = false
+
+
+  if (!is_my_account_createdFor_user) {
+    // set the value to true
+    is_my_account_createdFor_user = true
+  }
+
+  function getWishlistId() {
+    const cookie = cookie.parseCookide(document.cookie)
+    return cookie.Wishlist____Id
+  }
+
+  const Wishlist____Id = getWishlistId()
+
   return (
     <>
       <div className='w-[24px] pointer-events-none absolute' style={{
