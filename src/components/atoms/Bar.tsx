@@ -64,6 +64,11 @@ const Bar: React.FC<BarProps> = ({
         })
     }, []);
 
+    //
+    // const mySDKAPI = new Promise((resolve, reject) => {
+    //     console.log('hello worl')
+    // })
+    //
 
 
   function getWishlistId() {
