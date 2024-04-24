@@ -42,6 +42,8 @@ const Bar: React.FC<BarProps> = ({
     }
 
     useEffect(() => {
+
+        // on fait un call API pour récupérer les données
         mySDKAPI.then(result => {
             console.log('this is working')
             if (result) => {
